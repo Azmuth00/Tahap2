@@ -1,0 +1,27 @@
+﻿@model List<Tahap2.Models.Laporan>
+
+<h2>Daftar Laporan</h2>
+
+<a class="btn btn-danger" asp-action="EksporPdf">Ekspor PDF</a>
+<a class="btn btn-success" asp-action="EksporExcel">Ekspor Excel</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nama</th>
+            <th>Tanggal</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nama</td>
+                <td>@item.Tanggal.ToShortDateString()</td>
+                <td>@item.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>

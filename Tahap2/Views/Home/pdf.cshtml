@@ -1,0 +1,21 @@
+﻿@model List<Tahap2.Models.Laporan>
+
+<h2>PDF</h2>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Tanggal</th>
+        <th>Total</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nama</td>
+            <td>@item.Tanggal.ToShortDateString()</td>
+            <td>@item.Total</td>
+        </tr>
+    }
+</table>
